@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Randy Charity Jr"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,13 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) > 3:
+        if s[len(s)-3:len(s)] == "ing":
+            return s + "ly"
+        return s+"ing"
+    
+    else:
+        return s
 
 
 # E. not_bad
@@ -37,12 +42,16 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
-
+    val1 = s.find("not")
+    val2 = s.find("bad")
+    if val1 < val2: 
+        s = s.replace(s[val1:val2+3],"good") 
+        return s
+    
+    return s
 
 # F. front_back
-# Consider dividing a string into two halves.
+# Consider dividing a string into tvawo halves.
 # If the length is even, the front and back halves are the same
 # length. If the length is odd, we'll say that the extra
 # character goes in the front half.
@@ -52,8 +61,26 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    afront = ""
+    bfront = ""
+    aback = ""
+    bback = ""
+    ahalf = int(len(a)/2)
+    bhalf = int(len(b)/2)
+    if len(a) %2 == 0:
+        afront = a[:ahalf]
+        aback = a[ahalf:]
+    if len(b) %2 == 0:
+        bfront = b[:bhalf]
+        bback = b[bhalf:]
+    if len(a) %2 != 0:
+        afront = a[:ahalf+1]
+        aback = a[ahalf+1:]
+    if len(b) %2 != 0:
+        bfront = b[:bhalf+1]
+        bback = b[bhalf+1:]
+   
+    return afront + bfront + aback + bback
 
 
 # Provided simple test() function used in main() to print

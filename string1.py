@@ -4,7 +4,7 @@ Kenzie assignment: String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Randy Charity Jr"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -19,7 +19,7 @@ __author__ = "???"
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
-# of the form 'Number of donuts: <count>', where <count> is the number
+# of the form 'Numbesr of donuts: <count>', where <count> is the number
 # passed in. However, if the count is 10 or more, then use the word 'many'
 # instead of the actual count.
 # Example:
@@ -28,8 +28,10 @@ __author__ = "???"
 
 
 def donuts(count):
-    # your code here
-    return
+    if count < 10:
+        return("Number of donuts: " + str(count))
+    else:
+        return ("Number of donuts: " + "many")
 
 
 # B. both_ends
@@ -42,9 +44,12 @@ def donuts(count):
 
 
 def both_ends(s):
-    # your code here
-    return
-
+    if len(s) < 2:
+        return ''
+    else: 
+        return s[0:2] + s[len(s)-2:len(s)] 
+    
+        
 
 # C. fix_start
 # Given a string s, return a string where all occurrences
@@ -59,7 +64,10 @@ def both_ends(s):
 
 def fix_start(s):
     # your code here
-    return
+    stra = s[0] 
+    strb = s[1:len(s)]
+    strb = strb.replace(stra,'*')
+    return stra + strb
 
 
 # D. mix_up
@@ -73,8 +81,12 @@ def fix_start(s):
 
 
 def mix_up(a, b):
+    firsta = a[0:2]
+    firstb = b[0:2]
+    a = a[2:len(a)]
+    b = b[2:len(b)]
     # your code here
-    return
+    return firstb + a +" "+firsta + b
 
 
 # Provided simple test() function used in main() to print
